@@ -9,6 +9,7 @@ Page {
 
     TextArea {
         id: textArea
+        color: "#000000"
         anchors.fill: parent
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignTop
