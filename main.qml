@@ -2,8 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 ApplicationWindow {
-    width: 640
-    height: 480
+    width: 800
+    height: 600
     visible: true
     title: qsTr("b64 encoder/decoder")
 
@@ -24,20 +24,22 @@ ApplicationWindow {
             console.log(swipeView.currentIndex)
             var text
             var b64
-            if( 0 == swipeView.currentIndex ) {
+            switch (swipeView.currentIndex) {
+            case 0:
+            {
                 b64 = b64Page.textArea.text
                 text = Qt.atob(b64)
                 asciiPage.textArea.text = text
+                break
             }
-            else
-
-            if( 1 == swipeView.currentIndex ) {
-                text = asciiPage.textArea.text;
-                b64 = Qt.btoa(text);
-                b64Page.textArea.text = b64;
+            case 1:
+            {
+                text = asciiPage.textArea.text
+                b64 = Qt.btoa(text)
+                b64Page.textArea.text = b64
+                break
             }
-
-
+            }
         }
     }
 
